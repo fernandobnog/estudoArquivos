@@ -4,15 +4,16 @@ import java.io.IOException;
 
 public class CopiaArquivo {
     public static void main (String[] args){
-        long ini = System.currentTimeMillis();
+
         FileInputStream fis;
         FileOutputStream fos;
 
         try{
+
             fis = new FileInputStream("2_48MB.jpg");
             fos = new FileOutputStream("copia.jpg");
-            byte[] buffer = new byte[100000];
-
+            byte[] buffer = new byte[1000];
+            long ini = System.currentTimeMillis();
             int lidos;
             while((lidos = fis.read(buffer)) != -1){
                 fos.write(buffer, 0, lidos);
